@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<t t-inherit="point_of_sale.NumpadWidget" t-inherit-mode="extension">
+		<xpath expr="//button[12]" position="after">
+			<button class="mode-button" t-on-click="changeMode('price')">New</button>
+
+
+		</xpath>
+
+
+	</t>
+
+
+	</templates>

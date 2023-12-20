@@ -1,0 +1,12 @@
+<odoo>
+    <record id="sequence_help_ticket_seq" model="ir.sequence">
+        <field name="name">Formation</field>
+        <field name="code">od_ceti2.formations</field>
+        <field name="prefix">FOR</field>
+        <field name="padding">5</field>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+    </record>
+
+
+</odoo>

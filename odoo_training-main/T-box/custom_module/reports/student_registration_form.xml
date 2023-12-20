@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <report
+            string="Student Form report"
+            id="action_student_report_print"
+            model="student.student"
+            report_type="qweb-pdf"
+            name="custom_module.report_student_qweb_form"
+            file="custom_module.report_student_qweb_form"
+        />
+
+        <template id="report_student_qweb_form">
+
+            <t t-call="web.html_container">
+
+
+                <t t-foreach="docs" t-as="o">
+
+                    <t t-call="web.external_layout">
+
+
+                        <div class="page">
+
+                            <h1>Student Form (Printed from Odoo)</h1>
+
+                            <table>
+                                <tr>
+
+                                <td style="color:red">Student name :</td>
+
+                                <td><t t-esc="o.name"/></td>
+                                
+                                </tr>
+
+                                <tr>
+
+                                <td> Amount :  </td>
+
+                                <td><t t-esc="o.amount"/></td>
+                                
+                                </tr>
+
+                            </table>
+
+                       
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template> 
+
+
+
+    </data>
+</odoo>

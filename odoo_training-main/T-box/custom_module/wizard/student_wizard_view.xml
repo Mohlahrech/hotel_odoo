@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_student_wizard" model="ir.ui.view">
+            <field name="name">student.wizard.form</field>
+            <field name="model">student.registration.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student Details">
+                    <group>
+                        <field name="department_id" />
+                    <!-- attrs="{'readonly':[(user_id.is_manager', '=','False')]}" -->
+                    </group>
+                  
+                    <footer>
+                        <button name="print_report" string="Print" type="object" class="btn-primary" data-hotkey="q"/>
+                        
+                        <button name="print_xls_report" string="Print Xls" type="object" class="btn-primary" />
+                        
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <record id="action_print_student_report" model="ir.actions.act_window">
+
+            <field name="name">Student report</field>
+
+            <field name="res_model">student.registration.wizard</field>
+
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+           
+        </record>
+
+
+         <menuitem id="student_report_menu"
+          name="Student Report" 
+          parent="custom_module.menu_main_student"
+          action="action_print_student_report"
+         />
+
+
+
+
+
+</odoo>

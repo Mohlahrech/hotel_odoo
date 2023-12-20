@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_students_reg_tree" model="ir.ui.view">
+            <field name="name">Students.tree</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+
+                <tree string="Students list">
+                        <field name="name" required="1"/>
+                        <field name="amount"/>
+                        <field name="is_student" />
+                        <field name="department_id"/>
+                        <field name="age" />
+                        <field name="subject_ids"/>
+                        <field name="state" />
+         
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="student_view_search" model="ir.ui.view">
+            <field name="name">student.student.view.search</field>
+            <field name="model">student.student</field>
+
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <field name="department_id"/>
+              
+                    <separator/>
+                    <filter name="amount" string="Amount greater 0" domain="[('amount', '>', 0.0)]"/>
+
+                     <group expand="0" string="Group By">
+
+                        <filter string="Department" name="department_id" context="{'group_by':'department_id'}"/>
+                      
+                    </group>
+
+
+                </search>
+            </field>
+        </record>
+
+
+
+    <record id="view_students_reg_form" model="ir.ui.view">
+
+            <field name="name">Students</field>
+
+            <field name="model">student.student</field>
+
+            <field name="arch" type="xml">
+                <form string="Student Form">
+                     <header>
+                        <button string="Get data" states="draft" class="oe_highlight"
+                                    name="send_get_request" type="object" />
+
+                        <button string="Post data" states="draft" class="oe_highlight"
+                                    name="send_post_request" type="object" />
+                        
+                                    
+
+                            <button string="Confirm" states="draft" class="oe_highlight"
+                                    name="set_confirm" type="object" />
+                                    <!--attrs="{'invisible':[('state','!=','draft')]}"-->
+
+                            <button string="Approve" states="confirmed" class="oe_highlight"
+                                    name="set_approved" type="object" groups="custom_module.students_registration_group"/>
+
+                             <button string="Reject" states="confirmed" class="oe_highlight"
+                                    name="set_rejected" type="object"/>
+
+
+                             <button string="Reset to draft" states="cancel" class="oe_highlight"
+                                    name="reset_draft" type="object"/>
+
+
+
+                            <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,approved"/>
+                    </header>
+
+                <sheet>
+                   
+
+                    <group col="2">
+
+                        <field name="name" context="{'set_name':name}"/>
+                    </group>
+
+                    <group col="4">
+                        <field name="amount" 
+
+                            attrs="{'readonly':[('state','in',('confirmed','approved'))],
+                            'required':[('state','=','draft')]}"/>
+
+
+
+                        <field name="is_student" />
+                        <field name="department_id" />
+                        <field name="level" />
+                        <field name="age" readonly="1"/>
+                        <field name="subject_ids" widget="many2many_tags"/>
+                        <field name="gender" widget="radio"/>
+
+                    </group>
+
+
+                    <notebook>
+
+                        <page string="Page 1">
+
+                            <group col="4">
+
+                            <field  name="department_id" />
+
+                            <field style="color:red" name="age" readonly="1"/>
+
+                        </group>
+
+                        </page>
+
+                        <page string="page 2">
+
+                            <field name="note" />
+
+                         
+
+
+                        </page>
+
+
+                    </notebook>
+
+                </sheet>
+
+                 <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+
+                </form>
+
+
+            </field>
+        </record>
+
+
+
+
+
+<!-- 
+    attrs="{'required':[('amount','&gt;',10)], 'readonly':[('amount' ,'&lt;',10)]}"
+ -->
+ <!--              domain="[('name','like','cs')]" -->
+
+        <record id="action_open_students_reg" model="ir.actions.act_window">
+
+            <field name="name">Students</field>
+
+            <field name="res_model">student.student</field>
+
+            <field name="view_mode">tree,form,graph,pivot</field>
+           
+        </record>
+
+
+
+        <menuitem id="menu_main_student" name="Students"/>
+
+         <menuitem id="student_registration_menu"
+          name="Students Registration" 
+          parent="custom_module.menu_main_student"
+          action="action_open_students_reg"
+         />
+
+
+</odoo>

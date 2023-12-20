@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="sale_details_page" name="Sale Details">   
+
+ <t t-call="website.layout">   
+
+   <div class="oe_structure">     
+
+
+     <div class="container">       
+
+       <br /> 
+
+
+        <a type="button" href="http://localhost/new_application_request" name="myBtn2" class="btn btn-info"
+       
+            id="myBtn2">Submit Application
+            <i class="fa fa-check-square" aria-hidden="true"></i>
+        </a>
+
+           
+       <center><h3>Sale Order Details</h3></center>    
+            <br />         
+              <table class="table-striped table">       
+                    <thead style="font-size: 23px;">       
+                          <tr>           
+                              <h6>
+                                <b>        
+                                         <th>Sale Order</th>  
+                                         <th>Customer</th>       
+                                          <th>Date</th>          
+                                          <th><b>State</b></th>        
+                                           </b>               </h6>      
+
+                                           </tr>             </thead>   
+                                            <tbody>         
+                                              <t t-foreach="my_details" t-as="order">     
+
+                                                  <tr> 
+                                                   <td><span t-esc="order.name"/></td>       
+                                                   <td><span t-esc="order.partner_id.name"/></td>         
+                                                  <td><span t-esc="order.date_order"/></td>         
+                                                  <td><span t-esc="order.state"/></td>          
+                                                 </tr>             
+                                                </t>     
+                                             </tbody>      
+                                           </table>    
+                                      </div>  
+
+
+
+
+                                            
+                                   </div>
+
+
+                                    </t>
+            </template>
+
+
+
+
+
+
+<template id="registration_form_page" name="Registration">   
+
+ <t t-call="website.layout">   
+
+
+   <div class="oe_structure">     
+
+
+     <div class="container">       
+
+       <br /> 
+
+
+
+                      <div class="modal-body" style="padding:1px 50px;">
+
+                          <form method="post"
+
+                            action="/new_request_submit">
+
+
+
+                            <center>
+
+                             
+                        
+
+
+                           <h6 class="text-right" style="text-align: right;">Name
+                           </h6>
+                           <input type="input" name="st_name" id="st_name" />
+
+                              <br/>
+                                   
+                                                                        <td style="padding: 6px">
+                                                                            <label>فاتورة مبدئية</label>
+                                                                        </td>
+
+                                                                        <td style="padding: 6px">
+                                                                            <input id="fileInput1" type="file" style="display:none;"
+                                                                             accept=".png,.jpg,.jpeg,.pdf"
+                                                                           
+                                                                             name="attachment1"/>
+
+                                                                             <input type="button" value="إرفاق"
+                                                                                 onclick="document.getElementById('fileInput1').click();"
+                                                                                 class="fa fa-upload"/>
+
+                                                                                 <div id="file1_div" style="display:none">
+
+                                                                                    <input name="file_name1" id="file_name1"
+                                                                                     style="border:0;"></input>
+
+                                                                                 </div>
+                                                                             </td>
+
+
+                              <input type="hidden" name="csrf_token"
+                               t-att-value="request.csrf_token()"/>
+
+
+                               <div >
+                                  <button type="submit" 
+                                      >تقديم
+                                     
+                                   </button>
+
+                                 
+                              </div>
+
+                          </center>
+                      </form>
+                  </div>
+             </div>
+           </div>
+
+
+                                    </t>
+            </template>
+
+
+      </odoo>

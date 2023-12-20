@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* custom_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 12:41+0000\n"
+"PO-Revision-Date: 2022-04-15 12:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__dep_address
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__address
+msgid "Address"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__age
+msgid "Age"
+msgstr "العمر"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__create_uid
+#: model:ir.model.fields,field_description:custom_module.field_student_student__create_uid
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__create_uid
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__create_date
+#: model:ir.model.fields,field_description:custom_module.field_student_student__create_date
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__create_date
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__create_date
+msgid "Created on"
+msgstr "في"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__date_birth
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__display_name
+#: model:ir.model.fields,field_description:custom_module.field_student_student__display_name
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__display_name
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__amount
+msgid "Fees"
+msgstr "الرسوم"
+
+#. module: custom_module
+#: model:ir.model.fields.selection,name:custom_module.selection__student_student__gender__femail
+msgid "Femail"
+msgstr "انثى"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__gender
+msgid "Gender"
+msgstr "النوع"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__id
+#: model:ir.model.fields,field_description:custom_module.field_student_student__id
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__id
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__id
+msgid "ID"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__is_student
+msgid "Is Student"
+msgstr "هل هو طالب؟"
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results____last_update
+#: model:ir.model.fields,field_description:custom_module.field_student_student____last_update
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns____last_update
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__write_uid
+#: model:ir.model.fields,field_description:custom_module.field_student_student__write_uid
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__write_uid
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__write_date
+#: model:ir.model.fields,field_description:custom_module.field_student_student__write_date
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__write_date
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__level
+msgid "Level"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields.selection,name:custom_module.selection__student_student__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_students_departmetns__name
+#: model:ir.model.fields,field_description:custom_module.field_students_subjects__name
+msgid "Name"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__result
+msgid "Result"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__student_result_ids
+msgid "Results"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__subject_ids
+msgid "SUbjects"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__student_id
+msgid "Student"
+msgstr ""
+
+#. module: custom_module
+#: model_terms:ir.ui.view,arch_db:custom_module.view_students_reg_form
+msgid "Student Form"
+msgstr ""
+
+#. module: custom_module
+#: model:res.groups,name:custom_module.students_registration_group
+msgid "Student Registration"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_student_student__name
+msgid "Student name"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.actions.act_window,name:custom_module.action_open_students_reg
+#: model:ir.ui.menu,name:custom_module.menu_main_student
+msgid "Students"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.module.category,name:custom_module.main_students_category
+msgid "Students Access"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.ui.menu,name:custom_module.student_registration_menu
+msgid "Students Registration"
+msgstr ""
+
+#. module: custom_module
+#: model_terms:ir.ui.view,arch_db:custom_module.view_students_reg_tree
+msgid "Students list"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model.fields,field_description:custom_module.field_results_results__subject_id
+msgid "Subject"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model,name:custom_module.model_results_results
+msgid "results.results"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model,name:custom_module.model_student_student
+msgid "student.student"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model,name:custom_module.model_students_departmetns
+msgid "students.departmetns"
+msgstr ""
+
+#. module: custom_module
+#: model:ir.model,name:custom_module.model_students_subjects
+msgid "students.subjects"
+msgstr ""

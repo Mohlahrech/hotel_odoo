@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+students_access,students_access,model_student_student,,1,1,1,1
+students_sbjects,access_subjects,model_students_subjects,,1,1,1,0
+students_department,access_departments,model_students_departmetns,,1,1,1,0
+students_results,access_results,model_results_results,,1,1,1,0
+acess_student_report,access_report,model_student_registration_wizard,,1,1,1,1

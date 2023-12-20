@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <report
+                id="action_student_xls_report"
+                model="student.student"
+                string="Students"
+                report_type="xlsx"
+                name="custom_module.student_xls_report"
+                file="student_xls_report"
+                menu="False"
+        />
+
+
+        <record id="action_student_wizard" model="ir.actions.report">
+            <field name="name">Student print</field>
+            <field name="model">report.custom_module.report_wizard_form</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_module.report_wizard_form</field>
+             <field name="report_file">custom_module.report_wizard_form</field>
+      
+        </record>
+
+
+         <template id="report_wizard_form">
+
+            <t t-call="web.html_container">
+
+
+                <t t-foreach="result" t-as="o">
+
+                    <t t-call="web.external_layout">
+
+                       <!-- <t t-set="var"  t-value="9"/>
+
+                        <t t-if="o.name == 'st1'">
+
+                        </t>
+                        <t t-else="">
+
+                        </t>-->
+
+                        <t t-esc="department_id"/>
+
+
+                        <div class="page">
+                            <p>Student Wizard</p>
+
+                            <t t-esc="o.name"/>
+
+                            <!--<t t-esc="var"/>-->
+
+                            
+
+                       
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template> 
+
+
+</odoo>

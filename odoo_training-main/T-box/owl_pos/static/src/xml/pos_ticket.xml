@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" name="receipt_name" >
+    <t t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">   
+    
+    <xpath expr="//h1" position="before">
+        <ReceiptType/>
+    </xpath>
+</t>
+
+<t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">   
+    <xpath expr="//div[@class='pos-receipt']" position="replace">
+        <div class="pos-receipt">
+            
+            <t t-set="ReceiptClient" t-value="env.pos.get_client() || ''"/>
+           
+              <div style="width: 266px ;font-size: 14px; direction: rtl;text-align: center;">
+                    <style>
+                        table,th, td {
+                        border-bottom: 1px solid black;
+                        text-align: right;
+                        
+                        width: 265px ;
+                        font-size: 14px;}
+
+                    </style>
+                    <img class="pos-receipt-logo" t-att-src="receipt.company.logo" alt="Logo"/> <span style="text-align:center; padding:0;"> فاتورة </span>
+                    <br/>
+                    <tr style="width: 265px ;" height="10px">
+                        <th colspan="2">
+                            الرقم الضريبي : <span t-esc="receipt.company.vat"/>
+                        </th>
+                        <th >
+                              
+                        </th>
+                        <th colspan="2">
+                              الفاتورة  : <span t-esc="receipt.name"/>
+                        </th>
+                    </tr>
+                    <tr style="width: 265px ;" height="10px">
+                        <th style="width: 265px ;" colspan="2" >
+                                العميل : <span t-esc="ReceiptClient.name"/>
+                        </th>
+                         <th >
+                              
+                        </th>
+                        <th style="width: 265px ;" colspan="2" >
+                            التاريخ  :  <span t-esc="receipt.date.localestring"/>
+                        </th>
+                    </tr>
+                    <tr height="10px" colspan="5">
+                        <th>الصنف</th>
+                        <th>الكمية</th>
+                        <th >السعر</th>
+                
+                        <th>الإجمالي </th>
+                    </tr>
+                    <t t-call="OrderLinesReceipt"/>
+                    <tr><th colspan="5">
+                       الإجمالي قبل الضريبة : <span t-esc="env.pos.format_currency(receipt.total_without_tax)"/>
+                   </th> </tr>
+                    <tr><th colspan="5">
+                        ضريبة القيمة المضافة : <span t-esc="env.pos.format_currency(receipt.total_tax)"/>
+                    </th></tr>
+                    <tr><th colspan="5">
+                       الخصم : <span t-esc="env.pos.format_currency_no_symbol(receipt.total_discount)"/>
+                   </th></tr>
+                   <tr><th colspan="5">
+                       الإجمالي بعد الضريبة : <span t-esc="env.pos.format_currency(receipt.total_with_tax)"/>
+                   </th></tr>
+                   <tr><th colspan="5">
+                    <t t-foreach="receipt.paymentlines" t-as="line">
+                    
+                  
+                            <t t-esc="line.name" />:
+                            <t t-esc="env.pos.format_currency_no_symbol(line.amount)" /><br/>
+                    
+                   </t>
+                       البائع : <span t-esc="receipt.cashier" />
+                       <br/>
+                     
+                       المتبقي : <span t-esc="env.pos.format_currency(receipt.change)"/>
+
+                   </th></tr>
+
+                    <p style="font-size: 14px; bold;color:white; background:black;">البضاعة لا ترد ولا تستبدل بعد خروجها من المحل الا في حال وجود عيب مصنعي</p>
+                    
+                  
+                    <img t-if="receipt.qr_code" id="qrcode" t-att-src="receipt.qr_code" class="pos-receipt-logo"/>
+                   <br/>
+
+                </div>    
+            </div>
+            
+    </xpath>
+</t>
+
+
+</templates>
+

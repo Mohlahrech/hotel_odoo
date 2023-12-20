@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+        <record id="action_open_website" model="ir.actions.act_url">
+
+            <field name="name">Student Website</field>
+
+            <field name="url">http://localhost/my_sale_details</field>
+            <field name="target">new</field>
+
+           
+        </record>
+
+
+         <menuitem id="student_website_menu"
+          name="Student Website" 
+          action="action_open_website"
+         />
+
+
+</odoo>
